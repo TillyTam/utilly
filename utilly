@@ -10,6 +10,7 @@ echo "====================="
 echo "= TILLYTAM'S UTILLY ="
 echo "====================="
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 COMMAND=$1
 
 if [[ -z $1 ]]; then
@@ -20,7 +21,7 @@ fi
 
 if [[ $COMMAND = "cdnupload" ]]; then
     echo "Activating CDN Upload Module"
-    bash cdnupload.sh "$2"
+    bash $SCRIPT_DIR/src/cdnupload.sh "$2"
 else
     echo "Unknown option"
 fi
