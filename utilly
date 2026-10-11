@@ -1,0 +1,26 @@
+#!/bin/bash
+
+help() {
+    echo "UTilly, Tillytam's simple utility program."
+    echo "Options - can be inputted after running command, or inline:"
+    echo "cdnupload [FILE_PATH] - Upload a file to TillyTam CDN"
+}
+
+echo "====================="
+echo "= TILLYTAM'S UTILLY ="
+echo "====================="
+
+COMMAND=$1
+
+if [[ -z $1 ]]; then
+    help
+    read -sp "Input option: " COMMAND
+    echo
+fi
+
+if [[ $COMMAND = "cdnupload" ]]; then
+    echo "Activating CDN Upload Module"
+    bash cdnupload.sh "$2"
+else
+    echo "Unknown option"
+fi
