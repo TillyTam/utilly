@@ -4,6 +4,7 @@ help() {
     echo "UTilly, Tillytam's simple utility program."
     echo "Options - can be inputted after running command, or inline:"
     echo "cdnupload [FILE_PATH] - Upload a file to TillyTam CDN"
+    echo "configbackup [FILE_PATH (optional)] - Copies various config files into specified folder"
 }
 
 echo "====================="
@@ -22,6 +23,9 @@ fi
 if [[ $COMMAND = "cdnupload" ]]; then
     echo "Activating CDN Upload Module"
     bash $SCRIPT_DIR/src/cdnupload.sh "$2"
+elif [[ $COMMAND = "configbackup" ]]; then
+    echo "Copying Configuration Files"
+    bash $SCRIPT_DIR/src/configbackup.sh "$2"
 else
     echo "Unknown option"
 fi
